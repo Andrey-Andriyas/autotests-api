@@ -5,12 +5,12 @@ from clients.files.files_client import get_files_client
 from clients.files.files_schema import CreateFileRequestSchema
 from clients.courses.courses_client import get_courses_client, CreateCourseRequestSchema
 from clients.exercises.exercises_client import get_exercises_client, CreateExerciseRequestSchema
-from tools.fakers import get_random_email
+from tools.fakers import fake
 
 # 1. Создание пользователя
 public_users_client = get_public_users_client()
 create_user_request = CreateUserRequestSchema(
-    email=get_random_email(),
+    email=fake.email(),
     password="string",
     last_name="string",
     first_name="string",
